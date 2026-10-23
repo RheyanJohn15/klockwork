@@ -1,0 +1,43 @@
+{
+  "name": "klockwork",
+  "version": "0.1.0",
+  "description": "Client for the Klockwork public API",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RheyanJohn15/klockwork.git"
+  },
+  "keywords": [
+    "klockwork",
+    "time-tracking",
+    "api-client"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "node --experimental-strip-types --test test/client.test.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
+  }
+}
